@@ -38,6 +38,7 @@ main{
 .botones{
     display: flex;
     margin-top: 18px;
+    
 }
 
 .boton-encriptar{
@@ -49,6 +50,7 @@ main{
     height: 67px;
     width: 328px;
     box-sizing: border-box;
+    font-size: 28px;
 }
 
 .boton-desencriptar{
@@ -61,6 +63,7 @@ main{
     width: 328px;
     box-sizing: border-box;
     margin-left: 38px;
+    font-size: 28px;
     
 }
 
@@ -70,7 +73,7 @@ main{
     background: white;
     background-image: url(imagenes-challenge1/Muñeco.png);
     background-repeat: no-repeat;
-    background-position: center center;
+    background-position: bottom center;
     border: none;
     border-radius: 32px;
     color: #0a3871;
@@ -100,14 +103,88 @@ main{
     color: #0a3871;
     cursor: pointer;
     height: 67px;
-    width: 320px;
     margin-left: 90px;
     margin-top: 575px;
     position: absolute;
     width: 336px;
+    font-size: 28px;
+    
 }
 
 .informacion{
     color: #495057;
     font-size: 18px;
 } 
+
+@media screen and (max-width:800px) {
+
+    main{
+        margin-left: 0px;
+    }
+    .mensaje,.mensaje-resultado{
+        left: 20px;
+    }
+    .mensaje-resultado{
+        background-image: none;
+        text-align: center;
+        font-size: 30px;
+        line-height: 24px;   
+        height: auto;
+        position: absolute;
+        top: 975px;
+        width: 700px;
+        margin-left: 0;
+    }
+
+    .boton-encriptar,.boton-desencriptar{
+        height: 67px;
+        width: 320px;
+    }
+    .boton-copiar{
+        position: absolute;
+        top: 940px;
+        left: 0;
+        width: 610px;
+    }
+}
+
+@media screen and (max-width:415px){
+    main{
+        margin-left: 10px;
+    }
+    .mensaje{
+        width: 360px;
+        height: 300px;
+    }
+    .mensaje-resultado{
+        background-image: none;
+        text-align: center;
+        font-size: 30px;
+        line-height: 24px;   
+        height: auto;
+        position: absolute;
+        top: 775px;
+        width: 340px;
+        margin-left: 0;
+    }
+
+    .boton-encriptar,.boton-desencriptar{
+        height: 67px;
+        width: 380px;
+    }
+
+    .boton-desencriptar{
+        position: absolute;
+        top: 650px;
+        margin-left: 0;
+    }
+
+    .boton-copiar{
+        position: absolute;
+        top: 990px;
+        left: 0;
+        width: 380px;
+        margin-top: 0;
+        margin-left: 20px;
+    }
+}

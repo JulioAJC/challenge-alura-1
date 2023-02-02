@@ -1,33 +1,44 @@
+const mensaje = document.querySelector(".mensaje");
+const resultado = document.querySelector(".mensaje-resultado");
+
+const botonEncriptar = document.querySelector(".boton-encriptar");
+const botonDesencriptar = document.querySelector(".boton-desencriptar");
+const botonCopiar = document.querySelector(".boton-copiar");
+
 
 function encriptar(){
-    let mensaje = inputMensaje.value;
-    var mensajeEncriptado = mensaje.replace(/e/g,"enter")
+    let mensajeEntrada = mensaje.value;
+    let mensajeEncriptado = mensajeEntrada.replace(/e/g,"enter")
     .replace(/i/g,"imes")
     .replace(/a/g,"ai") 
     .replace(/o/g,"ober")
     .replace(/u/g,"ufat")
-    inputResultado.value = mensajeEncriptado;
+    resultado.value = mensajeEncriptado;
+    resultado.style.backgroundImage = "none";
+    return
 }
 
 function desencriptar(){
-    let mensaje = inputMensaje.value
-    var mensajeDesencriptado = mensaje.replace(/enter/g,"e")
+    let mensajeEntrada = mensaje.value;
+    let mensajeDesencriptado = mensajeEntrada.replace(/enter/g,"e")
     .replace(/imes/g,"i")
     .replace(/ai/g,"a") 
     .replace(/ober/g,"o")
     .replace(/ufat/g,"u")
-    inputResultado.value = mensajeDesencriptado; 
+    resultado.value = mensajeDesencriptado; 
+    resultado.style.backgroundImage = "none";
+    return
 }
 
-var inputMensaje = document.querySelector("#mensaje")
-var inputResultado = document.querySelector("#resultado")
+function copiar(){
+    
+    resultado.select();
+    document.execCommand('copy');
+}
 
-var botonEncriptar = document.querySelector("#boton-encriptar")
-var botonDesencriptar = document.querySelector("#boton-desencriptar")
-var botonCopiar = document.querySelector("#copiar")
 
-textarea.focus()
+
+botonCopiar.addEventListener("click", copiar);
 botonEncriptar.addEventListener("click", encriptar);
 botonDesencriptar.addEventListener("click", desencriptar);
-
 
